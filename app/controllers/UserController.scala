@@ -31,7 +31,7 @@ class UserController @Inject()(ControllerComponents: ControllerComponents, users
     UserForm.form.bindFromRequest.fold(
       errorForm => {
         errorForm.errors.foreach(println)
-        Future.successful(BadRequest("Error!"))
+        Future.successful(BadRequest(errorForm.toString))
       },
       data => {
         val user = User(0, data.firstName, data.lastName, data.mobile, data.email)
