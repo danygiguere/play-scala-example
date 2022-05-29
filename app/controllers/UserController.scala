@@ -29,7 +29,6 @@ class UserController @Inject()(ControllerComponents: ControllerComponents, users
   def add() = Action.async { implicit request: Request[AnyContent] =>
     UserForm.form.bindFromRequest.fold(
       errorForm => {
-        logger.warn(s"Form submission with errors: ${errorForm.errors}")
         errorForm.errors.foreach(println)
         Future.successful(BadRequest("Error!"))
       },
