@@ -7,7 +7,7 @@ import scala.concurrent.Future
 
 class UserService @Inject() (users: Users) {
 
-  def addUser(user: User): Future[String] = {
+  def addUser(user: User): Future[User] = {
     users.add(user)
   }
 

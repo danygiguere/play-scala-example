@@ -26,6 +26,7 @@ class DemoController @Inject()(val controllerComponents: ControllerComponents) e
   }
 
   def request() = Action { request =>
+    demoLogger.info(s"Request: ${request.body}")
     Ok("Got request [" + request + "]")
   }
 
