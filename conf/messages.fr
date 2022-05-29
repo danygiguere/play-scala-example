@@ -1,4 +1,5 @@
 home.title = Le titre en français
 user.firstName = my error message when the first name is too long
 users.firstName = firstName
-users.firstName = firstName
+error.users.firstName = my error message when the first name is too long
+errors.users.firstName = my error message when the first name is too long

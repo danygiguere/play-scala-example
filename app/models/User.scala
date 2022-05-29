@@ -15,7 +15,7 @@ case class UserFormData(firstName: String, lastName: String, mobile: Long, email
 object UserForm {
   val form: Form[UserFormData] = Form(
     mapping(
-      "firstName" -> text(minLength = 0, maxLength = 3),
+      "firstName" -> text(minLength = 0, maxLength = 8),
       "lastName" -> nonEmptyText,
       "mobile" -> longNumber,
       "email" -> email
