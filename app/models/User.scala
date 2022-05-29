@@ -47,12 +47,6 @@ class Users @Inject() (protected val dbConfigProvider: DatabaseConfigProvider)(i
     dbConfig.db.run(users.filter(_.id === id).result.headOption)
   }
 
-//  def add(user: User): Future[String] = {
-//    dbConfig.db.run(users += user).map(res => "User successfully added").recover {
-//      case ex: Exception => ex.getCause.getMessage
-//    }
-//  }
-
   def add(user: User): Future[User] = {
     dbConfig.db.run((users returning users.map(_.id)
       into ((user,id) => user.copy(id=id))
